@@ -1,0 +1,12 @@
+<!-- todo/templates/todo_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for todo_item in todo_items %}
+        <li>
+            {{ todo_item.title }} ({{ todo_item.completed }})
+            <a href="{% url 'update_todo_item' todo_item.pk %}">Edit</a>
+            <a href="{% url 'delete_todo_item' todo_item.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+<!-- todo/templates/update_todo_item.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Update Todo Item</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}
